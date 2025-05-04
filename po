@@ -1,0 +1,5 @@
+byte a;
+Console.Write("student num");
+a = byte.Parse(Console.ReadLine());
+byte b = (byte)(a / 3);
+Console.Write("Num of group = {0}", b);
