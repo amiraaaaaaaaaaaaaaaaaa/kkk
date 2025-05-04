@@ -1,0 +1,10 @@
+byte a;
+byte b;
+byte c;
+Console.WriteLine("enter a");
+a = byte.Parse(Console.ReadLine());
+Console.WriteLine("enter b");
+b = byte.Parse(Console.ReadLine());
+Console.WriteLine("enter c");
+c = byte.Parse(Console.ReadLine());
+Console.Write(b * b - 4 * a * c);
