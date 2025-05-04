@@ -1,0 +1,4 @@
+int a;
+Console.Write("hoghogh ra vared konnid");
+a = int.Parse(Console.ReadLine());
+Console.Write(a - (a * 0.03));
