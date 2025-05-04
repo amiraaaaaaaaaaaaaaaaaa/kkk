@@ -1,0 +1,74 @@
+using System; 
+using System.Collections.Generic; 
+ 
+class Program 
+{ 
+    static int VanilPrice = 5000; 
+    static int TotFarangiPrice = 5500; 
+    static int ShokolatiPrice = 6000; 
+ 
+    static int VanilCount = 0; 
+    static int TotFarangiCount = 0; 
+    static int ShokolatiCount = 0; 
+ 
+    static int TotalSold = 0; 
+ 
+    static void Main(string[] args) 
+    { 
+        List<string> Bestes = new List<string>(); 
+ 
+        Console.WriteLine("Tedad Moshtari Hara Benevisid (Be Addad):"); 
+        int CustomerCount = int.Parse(Console.ReadLine()); 
+        Console.WriteLine(""); 
+ 
+        for (int i = 0; i < CustomerCount; i++) 
+        { 
+            Console.WriteLine($"Moshtarie Shomare {i + 1}"); 
+ 
+            Console.Write("Tedad Vanil Haye Kharidary Shode:"); 
+            int TempVanil = int.Parse(Console.ReadLine()); 
+ 
+            Console.Write("Tedad Totfarangi Haye Kharidary Shode:"); 
+            int TempTotfarangi = int.Parse(Console.ReadLine()); 
+ 
+            Console.Write("Tedad Shokolati Haye Kharidary Shode:"); 
+            int TempShokolati = int.Parse(Console.ReadLine()); 
+            Console.WriteLine(""); 
+ 
+            VanilCount += TempVanil; 
+            TotFarangiCount += TempTotfarangi; 
+            ShokolatiCount += TempShokolati; 
+ 
+            TotalSold += (TempVanil * VanilPrice) + (TempTotfarangi * TotFarangiPrice) + (TempShokolati * ShokolatiPrice); 
+        } 
+ 
+        Console.WriteLine($"Foroshe Kole Emrooz: {TotalSold}"); 
+        Console.WriteLine($"Tedad Vanil Haye Forokhte Shode: {VanilCount}"); 
+        Console.WriteLine($"Tedad Totfarangi Haye Forokhte Shode: {TotFarangiCount}"); 
+        Console.WriteLine($"Tedad Shokolati Haye Forokhte Shode: {ShokolatiCount}"); 
+ 
+        int MaxSold = Math.Max(VanilCount, Math.Max(TotFarangiCount, ShokolatiCount)); 
+ 
+        if (MaxSold == VanilCount) 
+        { 
+            Bestes.Add("Vanil"); 
+        } 
+        if (MaxSold == TotFarangiCount) 
+        { 
+            Bestes.Add("Tot Farangi"); 
+        } 
+        if (MaxSold == ShokolatiCount) 
+        { 
+            Bestes.Add("Shokolati"); 
+        } 
+ 
+        if (Bestes.Count == 1) 
+        { 
+            Console.WriteLine(Bestes[0] + " Is The Best Solded"); 
+        } 
+        else 
+        { 
+            Console.WriteLine(string.Join(", ", Bestes) + "(Equlity!)"); 
+        } 
+    } 
+}
