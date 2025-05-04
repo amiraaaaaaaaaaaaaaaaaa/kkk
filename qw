@@ -1,0 +1,2 @@
+Double a = Math.Sqrt(5);
+Console.WriteLine(a);
