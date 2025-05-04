@@ -1,0 +1,4 @@
+Console.Write("Enter the masahat in meter");
+int s = int.Parse(Console.ReadLine());
+double h = s / 18;
+Console.Write(h);
